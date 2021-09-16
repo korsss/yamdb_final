@@ -7,27 +7,22 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.filters import SearchFilter
-from rest_framework.permissions import (
-    AllowAny, IsAuthenticated,
-    IsAuthenticatedOrReadOnly
-)
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from api_yamdb.settings import DEFAULT_FROM_EMAIL
+
 from .filters import TitleFilter
 from .models import Category, Genre, Review, Title, User
-from .permissions import (
-    IsAdmin, IsAdminOrReadOnly,
-    IsAuthorOrModeratorOrReadOnly
-)
-from .serializers import (
-    CategorySerializer, CommentSerializer,
-    ConfirmationDataSerializer, EmailSerializer,
-    GenreSerializer, ReviewSerializer,
-    TitleReadSerializer, TitleWriteSerializer,
-    UserSerializer
-)
+from .permissions import (IsAdmin, IsAdminOrReadOnly,
+                          IsAuthorOrModeratorOrReadOnly)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          ConfirmationDataSerializer, EmailSerializer,
+                          GenreSerializer, ReviewSerializer,
+                          TitleReadSerializer, TitleWriteSerializer,
+                          UserSerializer)
 from .utils import create_username, get_token
 
 

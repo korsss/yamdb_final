@@ -2,12 +2,9 @@ from django.urls import include, path
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from .views import (
-    CategoryViewSet, CommentsViewSet,
-    GenreViewSet, ReviewViewSet,
-    TitleViewSet, UserViewSet,
-    obtain_token, send_email
-)
+from .views import (CategoryViewSet, CommentsViewSet, GenreViewSet,
+                    ReviewViewSet, TitleViewSet, UserViewSet, obtain_token,
+                    send_email)
 
 router_v1 = routers.DefaultRouter()
 router_v1.register('users', UserViewSet, basename='users')
